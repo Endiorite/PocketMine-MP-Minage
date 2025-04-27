@@ -993,7 +993,7 @@ class Server{
 			$this->logger->debug("Server unique id: " . $this->getServerUniqueId());
 			$this->logger->debug("Machine unique id: " . Utils::getMachineUniqueId());
 
-			$this->network = new Network($this->logger);
+			$this->network = new Network($this->logger, $this->configGroup->getProperty(Yml::NETWORK_WHITELIST_ADDRESS, []));
 			$this->network->setName($this->getMotd());
 
 			$this->logger->info($this->language->translate(KnownTranslationFactory::pocketmine_server_info(

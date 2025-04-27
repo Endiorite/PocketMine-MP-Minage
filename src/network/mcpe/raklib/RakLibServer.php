@@ -46,6 +46,7 @@ class RakLibServer extends Thread{
 	protected string $mainPath;
 	/** @phpstan-var NonThreadSafeValue<InternetAddress> */
 	protected NonThreadSafeValue $address;
+	private NonThreadSafeValue $whitelistAddress;
 
 	/**
 	 * @phpstan-param ThreadSafeArray<int, string> $mainToThreadBuffer
@@ -59,10 +60,12 @@ class RakLibServer extends Thread{
 		protected int $serverId,
 		protected int $maxMtuSize,
 		protected int $protocolVersion,
-		protected SleeperHandlerEntry $sleeperEntry
+		protected SleeperHandlerEntry $sleeperEntry,
+		array		$whitelistAddress,
 	){
 		$this->mainPath = \pocketmine\PATH;
 		$this->address = new NonThreadSafeValue($address);
+		$this->whitelistAddress = new NonThreadSafeValue($whitelistAddress);
 	}
 
 	public function startAndWait(int $options = NativeThread::INHERIT_NONE) : void{
@@ -100,7 +103,8 @@ class RakLibServer extends Thread{
 			new UserToRakLibThreadMessageReceiver(new PthreadsChannelReader($this->mainToThreadBuffer)),
 			new RakLibToUserThreadMessageSender(new SnoozeAwarePthreadsChannelWriter($this->threadToMainBuffer, $this->sleeperEntry->createNotifier())),
 			new ExceptionTraceCleaner($this->mainPath),
-			recvMaxSplitParts: 512
+			recvMaxSplitParts: 512,
+			whitelistAddress: $this->whitelistAddress->deserialize()
 		);
 		$this->synchronized(function() : void{
 			$this->ready = true;

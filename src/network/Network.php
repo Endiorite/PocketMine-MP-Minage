@@ -57,10 +57,19 @@ class Network{
 	private NetworkSessionManager $sessionManager;
 
 	public function __construct(
-		private \Logger $logger
+		private \Logger $logger,
+		private array $whitelistAddress
 	){
 		$this->sessionManager = new NetworkSessionManager();
 		$this->bandwidthTracker = new BidirectionalBandwidthStatsTracker(5);
+		$this->whitelistAddress = array_flip($this->whitelistAddress);
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getWhitelistAddress() : array{
+		return $this->whitelistAddress;
 	}
 
 	public function getBandwidthTracker() : BidirectionalBandwidthStatsTracker{ return $this->bandwidthTracker; }
@@ -159,6 +168,9 @@ class Network{
 	 * Blocks an IP address from the main interface. Setting timeout to -1 will block it forever
 	 */
 	public function blockAddress(string $address, int $timeout = 300) : void{
+		if(isset($this->whitelistAddress[$address])){
+			return;
+		}
 		$this->bannedIps[$address] = $timeout > 0 ? time() + $timeout : PHP_INT_MAX;
 		foreach($this->advancedInterfaces as $interface){
 			$interface->blockAddress($address, $timeout);
