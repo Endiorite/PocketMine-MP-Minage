@@ -207,6 +207,10 @@ class TypeConverter{
 		}else{
 			$nbt = clone $nbt;
 		}
+		$nbt?->removeTag("TACKER_ID", "TRACKER_NAME");
+		if($nbt?->count() === 0){
+			$nbt = null;
+		}
 
 		$idMeta = $this->itemTranslator->toNetworkIdQuiet($itemStack);
 		if($idMeta === null){

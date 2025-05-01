@@ -67,10 +67,24 @@ abstract class Crops extends Flowable{
 	}
 
 	public function onRandomTick() : void{
-		if($this->age < self::MAX_AGE && CropGrowthHelper::canGrow($this)){
+//		if($this->age < self::MAX_AGE && CropGrowthHelper::canGrow($this)){
+//			$block = clone $this;
+//			++$block->age;
+//			BlockEventHelper::grow($this, $block, null);
+//		}
+	}
+	public function canUpdate(): bool
+	{
+		return $this->getPosition()->getWorld()->isChunkLoaded($this->getPosition()->getX() >> 4, $this->getPosition()->getZ() >> 4);
+	}
+
+	public function onScheduledUpdate() : void{
+		if($this->canUpdate() && $this->age < static::MAX_AGE)
+		{
 			$block = clone $this;
 			++$block->age;
 			BlockEventHelper::grow($this, $block, null);
+			$this->getPosition()->getWorld()->scheduleDelayedBlockUpdate($this->getPosition(), (60 * 5) * 20);
 		}
 	}
 }

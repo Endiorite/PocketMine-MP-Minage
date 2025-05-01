@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8270ef9beaac2397533052f1283e280f",
+    "content-hash": "d50cef5ba6aba6851c9afb7358638845",
     "packages": [
         {
             "name": "adhocore/json-comment",
@@ -124,6 +124,92 @@
                 }
             ],
             "time": "2025-02-28T13:11:00+00:00"
+        },
+        {
+            "name": "endiorite/bedrock-protocol",
+            "version": "37.0.0+bedrock-1.21.70",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Endiorite/BedrockProtocol.git",
+                "reference": "84be76458def3f61b8e9805aaf85aaf98a1e0232"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Endiorite/BedrockProtocol/zipball/84be76458def3f61b8e9805aaf85aaf98a1e0232",
+                "reference": "84be76458def3f61b8e9805aaf85aaf98a1e0232",
+                "shasum": ""
+            },
+            "require": {
+                "endiorite/nbt": "^1.0.0",
+                "ext-json": "*",
+                "php": "^8.1",
+                "pocketmine/binaryutils": "^0.2.0",
+                "pocketmine/color": "^0.2.0 || ^0.3.0",
+                "pocketmine/math": "^0.3.0 || ^0.4.0 || ^1.0.0",
+                "ramsey/uuid": "^4.1"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "2.1.0",
+                "phpstan/phpstan-phpunit": "^2.0.0",
+                "phpstan/phpstan-strict-rules": "^2.0.0",
+                "phpunit/phpunit": "^9.5 || ^10.0 || ^11.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "pocketmine\\network\\mcpe\\protocol\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "description": "An implementation of the Minecraft: Bedrock Edition protocol in PHP",
+            "support": {
+                "source": "https://github.com/Endiorite/BedrockProtocol/tree/37.0.0+bedrock-1.21.70"
+            },
+            "time": "2025-05-01T11:46:09+00:00"
+        },
+        {
+            "name": "endiorite/nbt",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Endiorite/NBT.git",
+                "reference": "48e3aa8979a868dabd8c30049f84a80ea257c8de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Endiorite/NBT/zipball/48e3aa8979a868dabd8c30049f84a80ea257c8de",
+                "reference": "48e3aa8979a868dabd8c30049f84a80ea257c8de",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ^8.0",
+                "php-64bit": "*",
+                "pocketmine/binaryutils": "^0.2.0"
+            },
+            "require-dev": {
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "2.1.0",
+                "phpstan/phpstan-strict-rules": "^2.0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "pocketmine\\nbt\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "description": "PHP library for working with Named Binary Tags",
+            "support": {
+                "source": "https://github.com/Endiorite/NBT/tree/1.0.0"
+            },
+            "time": "2025-05-01T11:31:52+00:00"
         },
         {
             "name": "endiorite/raklib",
@@ -335,52 +421,6 @@
                 "source": "https://github.com/pmmp/BedrockItemUpgradeSchema/tree/1.14.0"
             },
             "time": "2024-12-04T12:22:49+00:00"
-        },
-        {
-            "name": "pocketmine/bedrock-protocol",
-            "version": "37.0.0+bedrock-1.21.70",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pmmp/BedrockProtocol.git",
-                "reference": "7091dad2c12ed4a4106432df21fc698960c6be9e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pmmp/BedrockProtocol/zipball/7091dad2c12ed4a4106432df21fc698960c6be9e",
-                "reference": "7091dad2c12ed4a4106432df21fc698960c6be9e",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": "^8.1",
-                "pocketmine/binaryutils": "^0.2.0",
-                "pocketmine/color": "^0.2.0 || ^0.3.0",
-                "pocketmine/math": "^0.3.0 || ^0.4.0 || ^1.0.0",
-                "pocketmine/nbt": "^1.0.0",
-                "ramsey/uuid": "^4.1"
-            },
-            "require-dev": {
-                "phpstan/phpstan": "2.1.0",
-                "phpstan/phpstan-phpunit": "^2.0.0",
-                "phpstan/phpstan-strict-rules": "^2.0.0",
-                "phpunit/phpunit": "^9.5 || ^10.0 || ^11.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "pocketmine\\network\\mcpe\\protocol\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0"
-            ],
-            "description": "An implementation of the Minecraft: Bedrock Edition protocol in PHP",
-            "support": {
-                "issues": "https://github.com/pmmp/BedrockProtocol/issues",
-                "source": "https://github.com/pmmp/BedrockProtocol/tree/37.0.0+bedrock-1.21.70"
-            },
-            "time": "2025-03-27T15:19:36+00:00"
         },
         {
             "name": "pocketmine/binaryutils",
@@ -655,48 +695,6 @@
                 "source": "https://github.com/pmmp/Math/tree/1.0.0"
             },
             "time": "2023-08-03T12:56:33+00:00"
-        },
-        {
-            "name": "pocketmine/nbt",
-            "version": "1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pmmp/NBT.git",
-                "reference": "c3c7b0a7295daeaf7873d90fed5c5d10381d12e1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pmmp/NBT/zipball/c3c7b0a7295daeaf7873d90fed5c5d10381d12e1",
-                "reference": "c3c7b0a7295daeaf7873d90fed5c5d10381d12e1",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.4 || ^8.0",
-                "php-64bit": "*",
-                "pocketmine/binaryutils": "^0.2.0"
-            },
-            "require-dev": {
-                "phpstan/extension-installer": "^1.0",
-                "phpstan/phpstan": "2.1.0",
-                "phpstan/phpstan-strict-rules": "^2.0",
-                "phpunit/phpunit": "^9.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "pocketmine\\nbt\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0"
-            ],
-            "description": "PHP library for working with Named Binary Tags",
-            "support": {
-                "issues": "https://github.com/pmmp/NBT/issues",
-                "source": "https://github.com/pmmp/NBT/tree/1.1.1"
-            },
-            "time": "2025-03-09T01:46:03+00:00"
         },
         {
             "name": "pocketmine/snooze",
