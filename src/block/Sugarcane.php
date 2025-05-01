@@ -135,8 +135,6 @@ class Sugarcane extends Flowable{
 				++$this->age;
 				$this->position->getWorld()->setBlock($this->position, $this);
 			}
-		}else{
-			var_dump("You can't update this!");
 		}
 		$this->getPosition()->getWorld()->scheduleDelayedBlockUpdate($this->getPosition(), 6000);
 	}
