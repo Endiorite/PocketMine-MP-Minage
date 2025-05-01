@@ -144,7 +144,6 @@ class Sugarcane extends Flowable{
 	public function place(BlockTransaction $tx, Item $item, Block $blockReplace, Block $blockClicked, int $face, Vector3 $clickVector, ?Player $player = null) : bool{
 		$down = $blockReplace->getSide(Facing::DOWN);
 		if($down->hasSameTypeId($this)){
-			$this->onScheduledUpdate();
 			return parent::place($tx, $item, $blockReplace, $blockClicked, $face, $clickVector, $player);
 		}
 
@@ -152,10 +151,10 @@ class Sugarcane extends Flowable{
 		foreach(Facing::HORIZONTAL as $side){
 			$sideBlock = $down->getSide($side);
 			if($sideBlock instanceof Water || $sideBlock instanceof FrostedIce){
-				$this->onScheduledUpdate();
 				return parent::place($tx, $item, $blockReplace, $blockClicked, $face, $clickVector, $player);
 			}
 		}
+
 		return false;
 	}
 
