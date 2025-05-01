@@ -55,6 +55,7 @@ abstract class Stem extends Crops{
 	public function onNearbyBlockChange() : void{
 		if($this->facing !== Facing::UP && !$this->getSide($this->facing)->hasSameTypeId($this->getPlant())){
 			$this->position->getWorld()->setBlock($this->position, $this->setFacing(Facing::UP));
+			$this->getPosition()->getWorld()->scheduleDelayedBlockUpdate($this->getPosition(), 6000);
 		}
 		parent::onNearbyBlockChange();
 	}
@@ -110,7 +111,7 @@ abstract class Stem extends Crops{
 					}
 				}
 			}
-			$this->getPosition()->getWorld()->scheduleDelayedBlockUpdate($this->getPosition(), (60 * 5) * 20);
+			$this->getPosition()->getWorld()->scheduleDelayedBlockUpdate($this->getPosition(), 6000);
 		}
 	}
 

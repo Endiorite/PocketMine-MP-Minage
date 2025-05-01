@@ -23,6 +23,7 @@ declare(strict_types=1);
 
 namespace pocketmine\block;
 
+use pocketmine\block\tile\Crops as TileCrops;
 use pocketmine\block\BlockBreakInfo as BreakInfo;
 use pocketmine\block\BlockIdentifier as BID;
 use pocketmine\block\BlockToolType as ToolType;
@@ -878,7 +879,7 @@ final class VanillaBlocks{
 		self::register("bed", fn(BID $id) => new Bed($id, "Bed Block", new Info(new BreakInfo(0.2))), TileBed::class);
 		self::register("bedrock", fn(BID $id) => new Bedrock($id, "Bedrock", new Info(BreakInfo::indestructible())));
 
-		self::register("beetroots", fn(BID $id) => new Beetroot($id, "Beetroot Block", new Info(BreakInfo::instant())));
+		self::register("beetroots", fn(BID $id) => new Beetroot($id, "Beetroot Block", new Info(BreakInfo::instant())), TileCrops::class);
 		self::register("bell", fn(BID $id) => new Bell($id, "Bell", new Info(BreakInfo::pickaxe(5.0))), TileBell::class);
 		self::register("blue_ice", fn(BID $id) => new BlueIce($id, "Blue Ice", new Info(BreakInfo::pickaxe(2.8))));
 		self::register("bone_block", fn(BID $id) => new BoneBlock($id, "Bone Block", new Info(BreakInfo::pickaxe(2.0, ToolTier::WOOD))));
@@ -898,7 +899,7 @@ final class VanillaBlocks{
 		self::register("campfire", fn(BID $id) => new Campfire($id, "Campfire", $campfireBreakInfo), TileCampfire::class);
 		self::register("soul_campfire", fn(BID $id) => new SoulCampfire($id, "Soul Campfire", $campfireBreakInfo), TileCampfire::class);
 
-		self::register("carrots", fn(BID $id) => new Carrot($id, "Carrot Block", new Info(BreakInfo::instant())));
+		self::register("carrots", fn(BID $id) => new Carrot($id, "Carrot Block", new Info(BreakInfo::instant())), TileCrops::class);
 
 		$chestBreakInfo = new Info(BreakInfo::axe(2.5));
 		self::register("chest", fn(BID $id) => new Chest($id, "Chest", $chestBreakInfo), TileChest::class);
@@ -1019,7 +1020,7 @@ final class VanillaBlocks{
 		self::register("lever", fn(BID $id) => new Lever($id, "Lever", new Info(new BreakInfo(0.5))));
 		self::register("magma", fn(BID $id) => new Magma($id, "Magma Block", new Info(BreakInfo::pickaxe(0.5, ToolTier::WOOD))));
 		self::register("melon", fn(BID $id) => new Melon($id, "Melon Block", new Info(BreakInfo::axe(1.0))));
-		self::register("melon_stem", fn(BID $id) => new MelonStem($id, "Melon Stem", new Info(BreakInfo::instant())));
+		self::register("melon_stem", fn(BID $id) => new MelonStem($id, "Melon Stem", new Info(BreakInfo::instant())), TileCrops::class);
 		self::register("monster_spawner", fn(BID $id) => new MonsterSpawner($id, "Monster Spawner", new Info(BreakInfo::pickaxe(5.0, ToolTier::WOOD))), TileMonsterSpawner::class);
 		self::register("mycelium", fn(BID $id) => new Mycelium($id, "Mycelium", new Info(BreakInfo::shovel(0.6), [Tags::DIRT])));
 
@@ -1041,7 +1042,7 @@ final class VanillaBlocks{
 		self::register("obsidian", fn(BID $id) => new Opaque($id, "Obsidian", new Info(BreakInfo::pickaxe(35.0 /* 50 in PC */,  ToolTier::DIAMOND, 6000.0))));
 		self::register("packed_ice", fn(BID $id) => new PackedIce($id, "Packed Ice", new Info(BreakInfo::pickaxe(0.5))));
 		self::register("podzol", fn(BID $id) => new Podzol($id, "Podzol", new Info(BreakInfo::shovel(0.5), [Tags::DIRT])));
-		self::register("potatoes", fn(BID $id) => new Potato($id, "Potato Block", new Info(BreakInfo::instant())));
+		self::register("potatoes", fn(BID $id) => new Potato($id, "Potato Block", new Info(BreakInfo::instant()), TileCrops::class));
 		self::register("powered_rail", fn(BID $id) => new PoweredRail($id, "Powered Rail", $railBreakInfo));
 
 		$prismarineBreakInfo = new Info(BreakInfo::pickaxe(1.5, ToolTier::WOOD, 30.0));
@@ -1057,7 +1058,7 @@ final class VanillaBlocks{
 		self::register("carved_pumpkin", fn(BID $id) => new CarvedPumpkin($id, "Carved Pumpkin", new Info(BreakInfo::axe(1.0), enchantmentTags: [EnchantmentTags::MASK])));
 		self::register("lit_pumpkin", fn(BID $id) => new LitPumpkin($id, "Jack o'Lantern", $pumpkinBreakInfo));
 
-		self::register("pumpkin_stem", fn(BID $id) => new PumpkinStem($id, "Pumpkin Stem", new Info(BreakInfo::instant())));
+		self::register("pumpkin_stem", fn(BID $id) => new PumpkinStem($id, "Pumpkin Stem", new Info(BreakInfo::instant())), TileCrops::class);
 
 		$purpurBreakInfo = new Info(BreakInfo::pickaxe(1.5, ToolTier::WOOD, 30.0));
 		self::register("purpur", fn(BID $id) => new Opaque($id, "Purpur Block", $purpurBreakInfo));
@@ -1180,8 +1181,8 @@ final class VanillaBlocks{
 		self::register("stone_slab", fn(BID $id) => new Slab($id, "Stone", $stoneSlabBreakInfo));
 
 		self::register("legacy_stonecutter", fn(BID $id) => new Opaque($id, "Legacy Stonecutter", new Info(BreakInfo::pickaxe(3.5, ToolTier::WOOD))));
-		self::register("sugarcane", fn(BID $id) => new Sugarcane($id, "Sugarcane", new Info(BreakInfo::instant())));
-		self::register("sweet_berry_bush", fn(BID $id) => new SweetBerryBush($id, "Sweet Berry Bush", new Info(BreakInfo::instant())));
+		self::register("sugarcane", fn(BID $id) => new Sugarcane($id, "Sugarcane", new Info(BreakInfo::instant())), TileCrops::class);
+		self::register("sweet_berry_bush", fn(BID $id) => new SweetBerryBush($id, "Sweet Berry Bush", new Info(BreakInfo::instant()), TileCrops::class));
 		self::register("tnt", fn(BID $id) => new TNT($id, "TNT", new Info(BreakInfo::instant())));
 		self::register("fern", fn(BID $id) => new TallGrass($id, "Fern", new Info(BreakInfo::instant(ToolType::SHEARS, 1), [Tags::POTTABLE_PLANTS])));
 		self::register("tall_grass", fn(BID $id) => new TallGrass($id, "Tall Grass", new Info(BreakInfo::instant(ToolType::SHEARS, 1))));
@@ -1215,7 +1216,7 @@ final class VanillaBlocks{
 			deactivationDelayTicks: 10,
 			signalStrengthFactor: 1.0
 		));
-		self::register("wheat", fn(BID $id) => new Wheat($id, "Wheat Block", new Info(BreakInfo::instant())));
+		self::register("wheat", fn(BID $id) => new Wheat($id, "Wheat Block", new Info(BreakInfo::instant())), TileCrops::class);
 
 		$leavesBreakInfo = new Info(new class(0.2, ToolType::HOE) extends BreakInfo{
 			public function getBreakTime(Item $item) : float{

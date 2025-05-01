@@ -117,7 +117,7 @@ class Sugarcane extends Flowable{
 //				++$this->age;
 //				$this->position->getWorld()->setBlock($this->position, $this);
 //			}
-//			$this->getPosition()->getWorld()->scheduleDelayedBlockUpdate($this->getPosition(), (60 * 5) * 20);
+//			$this->getPosition()->getWorld()->scheduleDelayedBlockUpdate($this->getPosition(), 6000);
 //		}
 	}
 
@@ -135,13 +135,16 @@ class Sugarcane extends Flowable{
 				++$this->age;
 				$this->position->getWorld()->setBlock($this->position, $this);
 			}
-			$this->getPosition()->getWorld()->scheduleDelayedBlockUpdate($this->getPosition(), (60 * 5) * 20);
+		}else{
+			var_dump("You can't update this!");
 		}
+		$this->getPosition()->getWorld()->scheduleDelayedBlockUpdate($this->getPosition(), 6000);
 	}
 
 	public function place(BlockTransaction $tx, Item $item, Block $blockReplace, Block $blockClicked, int $face, Vector3 $clickVector, ?Player $player = null) : bool{
 		$down = $blockReplace->getSide(Facing::DOWN);
 		if($down->hasSameTypeId($this)){
+			$this->onScheduledUpdate();
 			return parent::place($tx, $item, $blockReplace, $blockClicked, $face, $clickVector, $player);
 		}
 
@@ -149,10 +152,10 @@ class Sugarcane extends Flowable{
 		foreach(Facing::HORIZONTAL as $side){
 			$sideBlock = $down->getSide($side);
 			if($sideBlock instanceof Water || $sideBlock instanceof FrostedIce){
+				$this->onScheduledUpdate();
 				return parent::place($tx, $item, $blockReplace, $blockClicked, $face, $clickVector, $player);
 			}
 		}
-
 		return false;
 	}
 

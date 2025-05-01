@@ -32,6 +32,7 @@ use pocketmine\item\Item;
 use pocketmine\math\Facing;
 use pocketmine\math\Vector3;
 use pocketmine\player\Player;
+use pocketmine\world\BlockTransaction;
 use function mt_rand;
 
 abstract class Crops extends Flowable{
@@ -84,7 +85,7 @@ abstract class Crops extends Flowable{
 			$block = clone $this;
 			++$block->age;
 			BlockEventHelper::grow($this, $block, null);
-			$this->getPosition()->getWorld()->scheduleDelayedBlockUpdate($this->getPosition(), (60 * 5) * 20);
+			$this->getPosition()->getWorld()->scheduleDelayedBlockUpdate($this->getPosition(), 6000);
 		}
 	}
 }
