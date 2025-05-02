@@ -37,7 +37,7 @@ use pocketmine\world\Position;
 class Sugarcane extends Flowable{
 	use AgeableTrait;
 	use StaticSupportTrait {
-		onNearbyBlockChange as onSupportBlockChange;
+		StaticSupportTrait::onNearbyBlockChange as onSupportBlockChange;
 	}
 
 	public const MAX_AGE = 15;

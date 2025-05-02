@@ -111,8 +111,8 @@ abstract class Stem extends Crops{
 					}
 				}
 			}
-			$this->getPosition()->getWorld()->scheduleDelayedBlockUpdate($this->getPosition(), 6000);
 		}
+		$this->getPosition()->getWorld()->scheduleDelayedBlockUpdate($this->getPosition(), 6000);
 	}
 
 	public function getDropsForCompatibleTool(Item $item) : array{
