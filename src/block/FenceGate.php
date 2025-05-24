@@ -109,6 +109,11 @@ class FenceGate extends Transparent{
 		$world = $this->position->getWorld();
 		$world->setBlock($this->position, $this);
 		$world->addSound($this->position, new DoorSound());
+
+		if(!is_null($player) && !$this->isOpen() && $this->collidesWithBB($player->getBoundingBox())) {
+			$player->teleport($world->getSafeSpawn($this->position));
+		}
+
 		return true;
 	}
 
