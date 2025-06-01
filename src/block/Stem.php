@@ -55,7 +55,6 @@ abstract class Stem extends Crops{
 	public function onNearbyBlockChange() : void{
 		if($this->facing !== Facing::UP && !$this->getSide($this->facing)->hasSameTypeId($this->getPlant())){
 			$this->position->getWorld()->setBlock($this->position, $this->setFacing(Facing::UP));
-			$this->getPosition()->getWorld()->scheduleDelayedBlockUpdate($this->getPosition(), 6000);
 		}
 		parent::onNearbyBlockChange();
 	}
@@ -65,33 +64,8 @@ abstract class Stem extends Crops{
 	}
 
 	public function onRandomTick() : void{
-//		if($this->facing === Facing::UP && CropGrowthHelper::canGrow($this)){
-//			$world = $this->position->getWorld();
-//			if($this->age < self::MAX_AGE){
-//				$block = clone $this;
-//				++$block->age;
-//				BlockEventHelper::grow($this, $block, null);
-//			}else{
-//				$grow = $this->getPlant();
-//				foreach(Facing::HORIZONTAL as $side){
-//					if($this->getSide($side)->hasSameTypeId($grow)){
-//						return;
-//					}
-//				}
-//
-//				$facing = Facing::HORIZONTAL[array_rand(Facing::HORIZONTAL)];
-//				$side = $this->getSide($facing);
-//				if($side->getTypeId() === BlockTypeIds::AIR && $side->getSide(Facing::DOWN)->hasTypeTag(BlockTypeTags::DIRT)){
-//					if(BlockEventHelper::grow($side, $grow, null)){
-//						$this->position->getWorld()->setBlock($this->position, $this->setFacing($facing));
-//					}
-//				}
-//			}
-//		}
-	}
-
-	public function onScheduledUpdate() : void{
-		if($this->canUpdate() && $this->facing === Facing::UP && CropGrowthHelper::canGrow($this)){
+		if($this->facing === Facing::UP && CropGrowthHelper::canGrow($this)){
+			$world = $this->position->getWorld();
 			if($this->age < self::MAX_AGE){
 				$block = clone $this;
 				++$block->age;
@@ -103,6 +77,7 @@ abstract class Stem extends Crops{
 						return;
 					}
 				}
+
 				$facing = Facing::HORIZONTAL[array_rand(Facing::HORIZONTAL)];
 				$side = $this->getSide($facing);
 				if($side->getTypeId() === BlockTypeIds::AIR && $side->getSide(Facing::DOWN)->hasTypeTag(BlockTypeTags::DIRT)){
@@ -112,7 +87,6 @@ abstract class Stem extends Crops{
 				}
 			}
 		}
-		$this->getPosition()->getWorld()->scheduleDelayedBlockUpdate($this->getPosition(), 6000);
 	}
 
 	public function getDropsForCompatibleTool(Item $item) : array{
