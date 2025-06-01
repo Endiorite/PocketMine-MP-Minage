@@ -94,36 +94,13 @@ class Sugarcane extends Flowable{
 			$supportBlock->hasTypeTag(BlockTypeTags::SAND);
 	}
 
-	public function canUpdate(): bool
-	{
-		return $this->getPosition()->getWorld()->isChunkLoaded($this->getPosition()->getX() >> 4, $this->getPosition()->getZ() >> 4);
-	}
-
 	public function ticksRandomly() : bool{
 		return true;
 	}
 
 	public function onRandomTick() : void{
-//		$down = $this->getSide(Facing::DOWN);
-//		if(!$down->hasSameTypeId($this)){
-//			if(!$this->hasNearbyWater($down)){
-//				$this->position->getWorld()->useBreakOn($this->position, createParticles: true);
-//				return;
-//			}
-//
-//			if($this->age === self::MAX_AGE){
-//				$this->grow($this->position);
-//			}else{
-//				++$this->age;
-//				$this->position->getWorld()->setBlock($this->position, $this);
-//			}
-//			$this->getPosition()->getWorld()->scheduleDelayedBlockUpdate($this->getPosition(), 6000);
-//		}
-	}
-
-	public function onScheduledUpdate() : void{
 		$down = $this->getSide(Facing::DOWN);
-		if($this->canUpdate() && !$down->hasSameTypeId($this)){
+		if(!$down->hasSameTypeId($this)){
 			if(!$this->hasNearbyWater($down)){
 				$this->position->getWorld()->useBreakOn($this->position, createParticles: true);
 				return;
@@ -135,9 +112,10 @@ class Sugarcane extends Flowable{
 				++$this->age;
 				$this->position->getWorld()->setBlock($this->position, $this);
 			}
+			$this->getPosition()->getWorld()->scheduleDelayedBlockUpdate($this->getPosition(), 6000);
 		}
-		$this->getPosition()->getWorld()->scheduleDelayedBlockUpdate($this->getPosition(), 6000);
 	}
+
 
 	public function place(BlockTransaction $tx, Item $item, Block $blockReplace, Block $blockClicked, int $face, Vector3 $clickVector, ?Player $player = null) : bool{
 		$down = $blockReplace->getSide(Facing::DOWN);
