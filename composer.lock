@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5e80b46494bca3498305e49e06b9373d",
+    "content-hash": "f69ece1166ef10f996be44c2d4b1f6ab",
     "packages": [
         {
             "name": "adhocore/json-comment",
@@ -127,16 +127,16 @@
         },
         {
             "name": "endiorite/bedrock-protocol",
-            "version": "38.0.1+bedrock-1.21.80",
+            "version": "39.0.1+bedrock-1.21.90",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Endiorite/BedrockProtocol.git",
-                "reference": "d9e61f426fd5b63123c5ba2a234cbb4a1bde0223"
+                "reference": "cc57aff8d653262941de385afd338e8c21ec942c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Endiorite/BedrockProtocol/zipball/d9e61f426fd5b63123c5ba2a234cbb4a1bde0223",
-                "reference": "d9e61f426fd5b63123c5ba2a234cbb4a1bde0223",
+                "url": "https://api.github.com/repos/Endiorite/BedrockProtocol/zipball/cc57aff8d653262941de385afd338e8c21ec942c",
+                "reference": "cc57aff8d653262941de385afd338e8c21ec942c",
                 "shasum": ""
             },
             "require": {
@@ -166,9 +166,9 @@
             ],
             "description": "An implementation of the Minecraft: Bedrock Edition protocol in PHP",
             "support": {
-                "source": "https://github.com/Endiorite/BedrockProtocol/tree/38.0.1+bedrock-1.21.80"
+                "source": "https://github.com/Endiorite/BedrockProtocol/tree/39.0.1+bedrock-1.21.90"
             },
-            "time": "2025-05-19T17:21:47+00:00"
+            "time": "2025-06-24T08:20:46+00:00"
         },
         {
             "name": "endiorite/nbt",
@@ -213,16 +213,16 @@
         },
         {
             "name": "endiorite/raklib",
-            "version": "0.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Endiorite/RakLib.git",
-                "reference": "2a50829b5436140ab67dfef2d66b7ffa90714c76"
+                "reference": "a3a14371d636d1a3cdef2e7f90b4e16225880d09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Endiorite/RakLib/zipball/2a50829b5436140ab67dfef2d66b7ffa90714c76",
-                "reference": "2a50829b5436140ab67dfef2d66b7ffa90714c76",
+                "url": "https://api.github.com/repos/Endiorite/RakLib/zipball/a3a14371d636d1a3cdef2e7f90b4e16225880d09",
+                "reference": "a3a14371d636d1a3cdef2e7f90b4e16225880d09",
                 "shasum": ""
             },
             "require": {
@@ -249,9 +249,9 @@
             ],
             "description": "A RakNet server implementation written in PHP",
             "support": {
-                "source": "https://github.com/Endiorite/RakLib/tree/0.1"
+                "source": "https://github.com/Endiorite/RakLib/tree/1.2.0"
             },
-            "time": "2025-04-27T18:37:32+00:00"
+            "time": "2025-06-24T08:27:03+00:00"
         },
         {
             "name": "endiorite/raklib-ipc",
@@ -259,16 +259,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Endiorite/RakLibIpc.git",
-                "reference": "3b448536df8c14c076cdd6b4e75c30db23de00e4"
+                "reference": "162d553ee30a52a2c77b60419f6ec560499e2b78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Endiorite/RakLibIpc/zipball/3b448536df8c14c076cdd6b4e75c30db23de00e4",
-                "reference": "3b448536df8c14c076cdd6b4e75c30db23de00e4",
+                "url": "https://api.github.com/repos/Endiorite/RakLibIpc/zipball/162d553ee30a52a2c77b60419f6ec560499e2b78",
+                "reference": "162d553ee30a52a2c77b60419f6ec560499e2b78",
                 "shasum": ""
             },
             "require": {
-                "endiorite/raklib": "^0.1",
+                "endiorite/raklib": "^1.2.0",
                 "php": "^8.0",
                 "php-64bit": "*",
                 "pocketmine/binaryutils": "^0.2.0"
@@ -291,7 +291,7 @@
             "support": {
                 "source": "https://github.com/Endiorite/RakLibIpc/tree/1.0.0"
             },
-            "time": "2025-04-27T18:51:03+00:00"
+            "time": "2025-06-24T08:39:51+00:00"
         },
         {
             "name": "netresearch/jsonmapper",
@@ -421,52 +421,6 @@
                 "source": "https://github.com/pmmp/BedrockItemUpgradeSchema/tree/1.14.0"
             },
             "time": "2024-12-04T12:22:49+00:00"
-        },
-        {
-            "name": "pocketmine/bedrock-protocol",
-            "version": "39.0.0+bedrock-1.21.90",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pmmp/BedrockProtocol.git",
-                "reference": "2b088183d12fc003523400867ee398e3893899ed"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pmmp/BedrockProtocol/zipball/2b088183d12fc003523400867ee398e3893899ed",
-                "reference": "2b088183d12fc003523400867ee398e3893899ed",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": "^8.1",
-                "pocketmine/binaryutils": "^0.2.0",
-                "pocketmine/color": "^0.2.0 || ^0.3.0",
-                "pocketmine/math": "^0.3.0 || ^0.4.0 || ^1.0.0",
-                "pocketmine/nbt": "^1.0.0",
-                "ramsey/uuid": "^4.1"
-            },
-            "require-dev": {
-                "phpstan/phpstan": "2.1.0",
-                "phpstan/phpstan-phpunit": "^2.0.0",
-                "phpstan/phpstan-strict-rules": "^2.0.0",
-                "phpunit/phpunit": "^9.5 || ^10.0 || ^11.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "pocketmine\\network\\mcpe\\protocol\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0"
-            ],
-            "description": "An implementation of the Minecraft: Bedrock Edition protocol in PHP",
-            "support": {
-                "issues": "https://github.com/pmmp/BedrockProtocol/issues",
-                "source": "https://github.com/pmmp/BedrockProtocol/tree/39.0.0+bedrock-1.21.90"
-            },
-            "time": "2025-06-17T23:46:38+00:00"
         },
         {
             "name": "pocketmine/binaryutils",
@@ -741,132 +695,6 @@
                 "source": "https://github.com/pmmp/Math/tree/1.0.0"
             },
             "time": "2023-08-03T12:56:33+00:00"
-        },
-        {
-            "name": "pocketmine/nbt",
-            "version": "1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pmmp/NBT.git",
-                "reference": "c3c7b0a7295daeaf7873d90fed5c5d10381d12e1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pmmp/NBT/zipball/c3c7b0a7295daeaf7873d90fed5c5d10381d12e1",
-                "reference": "c3c7b0a7295daeaf7873d90fed5c5d10381d12e1",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.4 || ^8.0",
-                "php-64bit": "*",
-                "pocketmine/binaryutils": "^0.2.0"
-            },
-            "require-dev": {
-                "phpstan/extension-installer": "^1.0",
-                "phpstan/phpstan": "2.1.0",
-                "phpstan/phpstan-strict-rules": "^2.0",
-                "phpunit/phpunit": "^9.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "pocketmine\\nbt\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0"
-            ],
-            "description": "PHP library for working with Named Binary Tags",
-            "support": {
-                "issues": "https://github.com/pmmp/NBT/issues",
-                "source": "https://github.com/pmmp/NBT/tree/1.1.1"
-            },
-            "time": "2025-03-09T01:46:03+00:00"
-        },
-        {
-            "name": "pocketmine/raklib",
-            "version": "1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pmmp/RakLib.git",
-                "reference": "a28d05216d34dbd00e8aed827a58df6b4c11510b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pmmp/RakLib/zipball/a28d05216d34dbd00e8aed827a58df6b4c11510b",
-                "reference": "a28d05216d34dbd00e8aed827a58df6b4c11510b",
-                "shasum": ""
-            },
-            "require": {
-                "ext-sockets": "*",
-                "php": "^8.1",
-                "php-64bit": "*",
-                "php-ipv6": "*",
-                "pocketmine/binaryutils": "^0.2.0",
-                "pocketmine/log": "^0.3.0 || ^0.4.0"
-            },
-            "require-dev": {
-                "phpstan/phpstan": "2.1.0",
-                "phpstan/phpstan-strict-rules": "^2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "raklib\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0"
-            ],
-            "description": "A RakNet server implementation written in PHP",
-            "support": {
-                "issues": "https://github.com/pmmp/RakLib/issues",
-                "source": "https://github.com/pmmp/RakLib/tree/1.2.0"
-            },
-            "time": "2025-06-08T17:36:06+00:00"
-        },
-        {
-            "name": "pocketmine/raklib-ipc",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pmmp/RakLibIpc.git",
-                "reference": "ce632ef2c6743e71eddb5dc329c49af6555f90bc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pmmp/RakLibIpc/zipball/ce632ef2c6743e71eddb5dc329c49af6555f90bc",
-                "reference": "ce632ef2c6743e71eddb5dc329c49af6555f90bc",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.0",
-                "php-64bit": "*",
-                "pocketmine/binaryutils": "^0.2.0",
-                "pocketmine/raklib": "^0.15.0 || ^1.0.0"
-            },
-            "require-dev": {
-                "phpstan/phpstan": "1.10.1",
-                "phpstan/phpstan-strict-rules": "^1.0.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "raklib\\server\\ipc\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0"
-            ],
-            "description": "Channel-based protocols for inter-thread/inter-process communication with RakLib",
-            "support": {
-                "issues": "https://github.com/pmmp/RakLibIpc/issues",
-                "source": "https://github.com/pmmp/RakLibIpc/tree/1.0.1"
-            },
-            "time": "2024-03-01T15:55:05+00:00"
         },
         {
             "name": "pocketmine/snooze",
@@ -2925,7 +2753,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
@@ -2956,7 +2784,7 @@
         "ext-zlib": ">=1.2.11",
         "composer-runtime-api": "^2.0"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "platform-overrides": {
         "php": "8.1.0"
     },
