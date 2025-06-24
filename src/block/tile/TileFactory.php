@@ -116,6 +116,13 @@ final class TileFactory{
 	}
 
 	/**
+	 * @phpstan-param class-string<Tile> $class
+	 */
+	public function isRegistered(string $class) : bool{
+		return isset($this->saveNames[$class]);
+	}
+
+	/**
 	 * @internal
 	 * @throws SavedDataLoadingException
 	 */
