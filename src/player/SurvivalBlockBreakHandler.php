@@ -141,6 +141,10 @@ final class SurvivalBlockBreakHandler{
 	}
 
 	public function __destruct(){
+		if($this->breakProgress >= 1)
+		{
+			$this->player->breakBlock($this->blockPos);
+		}
 		if($this->player->getWorld()->isInLoadedTerrain($this->blockPos)){
 			$this->player->getWorld()->broadcastPacketToViewers(
 				$this->blockPos,
